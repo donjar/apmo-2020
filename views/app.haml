@@ -1,0 +1,25 @@
+!!! 5
+%html
+  %head
+    %title Upload to APMO 2020
+  %body
+    %form{ method: 'post', enctype: 'multipart/form-data' }
+      .custom-file
+        %p
+          %label{ for: 'problem' } Upload problem
+        %p
+          %input#problem{ name: 'problem', type: 'file' }
+      %p Problem Type:
+      %div
+        %input#typeAlgebra{ type: 'radio', name: 'type', value: 'algebra' }
+        %label{ for: 'typeAlgebra' } Algebra
+
+        %input#typeCombinatorics{ type: 'radio', name: 'type', value: 'combinatorics' }
+        %label{ for: 'typeCombinatorics' } Combinatorics
+
+        %input#typeGeometry{ type: 'radio', name: 'type', value: 'geometry' }
+        %label{ for: 'typeGeometry' } Geometry
+
+        %input#typeNumberTheory{ type: 'radio', name: 'type', value: 'numberTheory' }
+        %label{ for: 'typeNumberTheory' } Number Theory
+      %button{ type: 'submit' } Upload

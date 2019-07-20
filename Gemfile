@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+ruby '2.6.3'
+gem 'thin'
+gem 'haml'
+gem 'sinatra'
+gem 'aws-sdk-s3'
