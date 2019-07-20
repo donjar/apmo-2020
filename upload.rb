@@ -6,7 +6,7 @@ def upload_problem(file, type)
   s3 = Aws::S3::Resource.new(region: ENV['AWS_REGION'])
 
   bucket = s3.bucket(ENV['AWS_BUCKET'])
-  wordlist = File.read('wordlist').split("\n")
+  wordlist = File.read('wordlist.txt').split("\n")
   10.times do
     object_name = "#{type}-#{wordlist.sample}-#{file[:filename]}"
     next if bucket.objects.any? { |item| item.key == object_name }
