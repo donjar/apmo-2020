@@ -1,25 +1,35 @@
 !!! 5
 %html
   %head
-    %title Upload to APMO 2020
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
+    %link{ rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity: 'sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin: 'anonymous' }
+    %title Upload problems to APMO 2020
   %body
-    %form{ method: 'post', enctype: 'multipart/form-data' }
-      .custom-file
-        %p
-          %label{ for: 'problem' } Upload problem
-        %p
-          %input#problem{ name: 'problem', type: 'file' }
-      %p Problem Type:
-      %div
-        %input#typeAlgebra{ type: 'radio', name: 'type', value: 'algebra' }
-        %label{ for: 'typeAlgebra' } Algebra
+    .container
+      %form{ method: 'post', enctype: 'multipart/form-data' }
+        .custom-file
+          %p
+            %label{ for: 'problem' } Upload problem
+          %p
+            %input#problem{ name: 'problem', type: 'file' }
 
-        %input#typeCombinatorics{ type: 'radio', name: 'type', value: 'combinatorics' }
-        %label{ for: 'typeCombinatorics' } Combinatorics
+        %div
+          %p Problem Type:
+          .form-check.form-check-inline
+            %input#typeAlgebra.form-check-input{ type: 'radio', name: 'type', value: 'algebra' }
+            %label.form-check-label{ for: 'typeAlgebra' } Algebra
 
-        %input#typeGeometry{ type: 'radio', name: 'type', value: 'geometry' }
-        %label{ for: 'typeGeometry' } Geometry
+          .form-check.form-check-inline
+            %input#typeCombinatorics.form-check-input{ type: 'radio', name: 'type', value: 'combinatorics' }
+            %label.form-check-label{ for: 'typeCombinatorics' } Combinatorics
 
-        %input#typeNumberTheory{ type: 'radio', name: 'type', value: 'numberTheory' }
-        %label{ for: 'typeNumberTheory' } Number Theory
-      %button{ type: 'submit' } Upload
+          .form-check.form-check-inline
+            %input#typeGeometry.form-check-input{ type: 'radio', name: 'type', value: 'geometry' }
+            %label.form-check-label{ for: 'typeGeometry' } Geometry
+
+          .form-check.form-check-inline
+            %input#typeNumberTheory.form-check-input{ type: 'radio', name: 'type', value: 'numberTheory' }
+            %label.form-check-label{ for: 'typeNumberTheory' } Number Theory
+
+        %button.btn.btn-primary{ type: 'submit' } Upload
